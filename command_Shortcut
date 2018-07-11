@@ -1,0 +1,10 @@
+
+Current:
+curl --header "Content-type: application/json"  --request POST  --data '{"ID":12"}'  http://localhost:9000/scoreDB
+
+Old:
+curl --header "Content-type: application/json"  --request POST  --data '{"name": "Guillaume 12"}'  http://localhost:9000/sayHello
+curl --header "Content-type: application/json"  --request GET  --data '{"ID":12, "RECENCY": 3.5, "LAST_EMAIL_OPEN": 1.4, "HOUSEHOLD_INCOME": 0.2, "CHANNEL_ACQUISITION": "DIRECT"}'  http://localhost:9000/score
+curl --header "Content-type: application/json"  --request GET  --data '{"ID":12, "RECENCY": 3.5, "LAST_EMAIL_OPEN": 1.4, "HOUSEHOLD_INCOME": 100, "CHANNEL_ACQUISITION": "REFERRAL"}'  http://localhost:9000/score
+curl --header "Content-type: application/json"  --request GET  --data '{"ID":12, "RECENCY": 3.5, "LAST_EMAIL_OPEN": 1.4, "HOUSEHOLD_INCOME": 100, "CHANNEL_ACQUISITION": "REFERRAL"}'  http://localhost:9000/dbtest
+

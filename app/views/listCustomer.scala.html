@@ -1,0 +1,32 @@
+@(customers: Seq[Customer], form: Form[CustomerWithoutScore])(implicit messages: play.api.i18n.Messages,request: RequestHeader )
+
+@main("Customers") {
+
+
+<h1>Customers</h1>
+
+<div class="datagrid"><table>
+    <thead>
+    <tr><th>Name</th><th>ID</th><th>Customer Value</th></tr></thead>
+    <tbody>
+    @for(w <- customers) {
+    <tr><td>@w.name</td><td>@w.key</td><td> @w.scoreValueFormatted</td></tr>
+    }
+    </tbody>
+</table>
+
+</div>
+
+
+<hr/>
+
+@helper.form(routes.FormController.createCustomer) {
+
+@helper.inputText(form("name"))
+@helper.inputText(form("key"))
+
+<button type="submit">Check customer score</button>
+
+}
+
+}
